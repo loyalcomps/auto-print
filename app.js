@@ -5,6 +5,7 @@ const { exec } = require('child_process');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const wkhtmltopdf = require('wkhtmltopdf');
 
 const app = express();
 const port = 8000;

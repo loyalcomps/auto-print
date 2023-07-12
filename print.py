@@ -1,9 +1,12 @@
 from flask import Flask, request
+from flask_cors import CORS
 import win32print
 import tempfile
 import os
 
+
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/print', methods=['POST'])
 def print_pdf():
