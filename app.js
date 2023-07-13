@@ -49,7 +49,7 @@ app.post('/dotmatrix/print', async (req, res) => {
       });
 
     // Print the PDF file using pdf-to-printer
-    // await print('./print.pdf', { orientation: 'landscape', paperSize: 'sindal' });
+    await print('./print.pdf', { orientation: 'landscape', paperSize: 'sindal' });
 
     console.log('Print job sent to printer.');
     // fs.unlinkSync(pdfPath)
