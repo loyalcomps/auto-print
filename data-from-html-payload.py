@@ -1,13 +1,7 @@
-# PRINTER_NAME = "EPSON LQ-1150II ESC/P2"
-
 from flask import Flask
 from flask import jsonify
 from flask import request
 from flask_cors import CORS
-import pdfkit
-
-
- 
 
 
 app = Flask(__name__)
@@ -75,7 +69,7 @@ def index():
     total_weight = [x for x in datas[end_index+2].split("  ") if x != ''][2].strip()
     taxable_value = [x for x in datas[end_index+3].split("  ") if x != ''][0].strip()
     net_value = [x for x in datas[end_index+5].split("  ") if x != ''][0].strip()
-    print({"invoice_number":invoice_number, 
+    return {"invoice_number":invoice_number, 
         "customer_name":customer_name, 
         "customer_address":customer_address, 
         "date":date,
@@ -91,11 +85,8 @@ def index():
         "total_weight":total_weight,
         "taxable_value":taxable_value,
         "net_value":net_value
-        })
+        }, 200
 
-
-    out = {'status':'OK'}
-    return jsonify(out)
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True)

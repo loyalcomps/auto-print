@@ -31,7 +31,7 @@ app.post('/dotmatrix/print', async (req, res) => {
     const trimmedString = printer_data;
 
     // Add <pre> tags to the HTML string to preserve the formatting
-    const htmlStringWithPreTags = `<pre style="font-weight:bold;">${trimmedString}</pre>`;
+    const htmlStringWithPreTags = `<html><head><meta charset="UTF-8"></head><body><pre style="font-weight:bold;">${trimmedString}</pre></body></html>`;
 
     console.log(printer_data);
 
@@ -49,7 +49,7 @@ app.post('/dotmatrix/print', async (req, res) => {
       });
 
     // Print the PDF file using pdf-to-printer
-    await print('./print.pdf', { orientation: 'landscape', paperSize: 'sindal' });
+    // await print('./print.pdf', { orientation: 'landscape', paperSize: 'sindal' });
 
     console.log('Print job sent to printer.');
     // fs.unlinkSync(pdfPath)
