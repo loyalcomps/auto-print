@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+</head>
+<style>
+    body {
+    width: 297mm;
+    height: 210mm;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 50px;
+}
+
+
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.customer_info {
+    position: absolute;
+    top: 12%;
+    left: 4%;
+}
+
+.customer_info_arabic {
+    width: 33%;
+    position: absolute;
+    top: 11%;
+    left: 65%;
+    direction: rtl;
+    text-align: right;
+    line-height: 0.5;
+}
+
+
+.invoicenumber {
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+
+
+
+.payment_terms {
+    position: absolute;
+    top: 20.5%;
+    left: 16%;
+}
+
+.customer_number {
+    position: absolute;
+    top: 20.5%;
+    left: 48%;
+}
+
+.place_of_delivery {
+    position: absolute;
+    top: 20.5%;
+    left: 75%;
+}
+
+.sales_man {
+    position: absolute;
+    top: 20.5%;
+    left: 92%;
+}
+
+ol {
+  list-style-type: none;
+}
+
+
+.line_items{
+    position: absolute;
+    top: 32%;
+    left: 0%;
+    width: 100%;
+    height: 50%;
+}
+
+.line_items ol li{
+    position: relative;
+    height: 20px; 
+}
+.serial_number{
+    position: absolute;
+    left: 3%;
+}
+.item_name{
+    position: absolute;
+    left: 6.3%;
+    width:30%;
+}
+.item_name_arabic{
+    position: absolute;
+    left: 27.5%;
+    width: 30%;
+    direction: rtl;
+    text-align: right;
+}
+.quantity{
+    position: absolute;
+    left: 68%;
+}
+.unit_price{
+    position: absolute;
+    left: 75.2%;
+}
+.unit{
+    position: absolute;
+    left: 84%;
+}
+.vat_amount{
+    position: absolute;
+    left: 89%;
+}
+.total_value{
+    position: absolute;
+    left: 96%;
+}
+
+.footer{
+    position: absolute;
+    top: 85%;
+    left: 2%;
+    width: 100%;
+}
+.qrcode{
+    height:100px;
+    width: 100px;
+    vertical-align: right;
+    float:left;
+    bottom:0;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.total_english{
+    vertical-align: text-top;
+    margin-left: 10px;
+    position: absolute;
+    left: 16%;
+    width: 25%;
+    font-size: 13px;
+}
+
+.total_arabic{
+    vertical-align: text-top;
+    margin-left: 10px;
+    direction: rtl;
+    position: absolute;
+    left: 40%;
+    width: 25%;
+    font-size: 13px;
+}
+
+.footer_child{
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    width: 55%;
+}
+.delivery_date{
+    position: absolute;
+    top: 5.3%;
+    left: 19%;
+}
+.cases{
+    position: absolute;
+    top: 5.3%;
+    left: 61%;
+}
+.weight{
+    position: absolute;
+    top: 5.3%;
+    left: 100%;
+}
+
+.footer_net{
+    position: absolute;
+    top: 0%;
+    left: 93.3%;
+    text-align: right;
+    height: 100%;
+}
+.footer_net span {
+    display: block;
+    position: relative;
+}
+
+.amount_untaxed{
+    position: absolute;
+    top: 0%;
+}
+.amount_discount{
+    position: relative;
+    top: 8%;
+
+}
+.amount_tax{
+    position: relative;
+    top: 15%;
+
+}
+.vat_percent{
+    position: relative;
+    top: 20%;
+
+}
+.amount_total{
+    position: relative;
+    top: 25%;
+}
+
+
+</style>
+<body>
+
+    <div class="header">
+        <div class="customer_info">
+            <p class="customer_name"><%= partner_name %></p>
+            <p class="customer_address"><%= address %></p>
+        </div>
+        
+        <div class="invoicenumber">
+            <p><%= invoice_no %></p>
+            <p><%= date %></p>
+        </div>
+
+        <div class="customer_info_arabic">
+            <p class="customer_name_arabic"><%= partner_name_arabic %></p>
+            <p class="customer_address_arabic"><%= address_arabic %></p>
+        </div>
+        <div class="headaer_bottom">
+            <p class="payment_terms"><%= payment_terms %></p>
+            <p class="customer_number"><%= customer_no %></p>
+            <p class="place_of_delivery"><%= place_of_delivery %></p>
+            <p class="sales_man"><%= sales_man %></p>
+        </div>
+
+    </div>
+    <div class="line_items">
+        <ol>
+            <% line_items.forEach(function(item) { %>
+                <li style="display: flex;">
+                    <p class="serial_number"><%= item.sl_no %>.</p>
+                    <p class="item_name"><%= item.product_name %> </p>
+                    <p class="item_name_arabic"><%= item.product_name_arabic %></p>
+                    <p class="quantity"><%= item.quantity %></p>
+                    <p class="unit_price"><%= item.unit_price %></p>
+                    <p class="unit"><%= item.uom %></p>
+                    <p class="vat_amount"><%= item.tax_amount %></p>
+                    <p class="total_value"><%= item.total_amount %></p>
+                </li>
+            <% }); %>
+        </ol>
+    </div>
+    <div class="footer">
+        <div>
+            <img class="qrcode" alt="Logo" src="<%= qrcode_url %>">
+            <span class="total_english"><%= amount_in_words %></span>
+            <span class="total_arabic"><%= amount_in_words_arabic %></span>
+        </div>
+        <div class="footer_child">
+            <span class="delivery_date"><%= delivery_date %></span>
+            <span class="cases"><%= total_case %></span>
+            <span class="weight"><%= total_weight %></span>
+        </div>
+        <div class="footer_net">
+            <span class="amount_untaxed"><%= amount_untaxed %></span>
+            <span class="amount_discount"><%= amount_discount %></span>
+            <span class="amount_tax"><%= amount_tax %></span>
+            <span class="vat_percent">0</span>
+            <span class="amount_total"><%= amount_total %></span>
+        </div>
+    </div>
+</body>
+</html>
