@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
+const { print } = require('pdf-to-printer');
 
 const app = express();
 const port = 8000;
@@ -28,18 +29,19 @@ app.post('/dotmatrix/print', async (req, res) => {
     const data = req.body['data'];
     const pdfPath = './print.pdf';
 
-    const qc = data['qr_code_str'];
+    const qc = "Error generating QR code"//data['qr_code_str'];
 
-    // QRCode.toDataURL(qc, (err, url) => {
-    //   if (err) {
-    //     console.error('Error generating QR code', err);
-    //     QRCode.toDataURL("Error in getting qr code data", function (err, url) {
-    //       data['qrcode_url'] = url;
-    //     });
-    //     return;
-    //   }
+    QRCode.toDataURL(qc, (err, url) => {
+      if (err) {
+        console.error('Error generating QR code', err);
+        QRCode.toDataURL("Error in getting qr code data", function (err, url) {
+          data['qrcode_url'] = url;
+        });
+        console.error('Error generating QR code', err);
+        return;
+      }
 
-    //   data['qrcode_url'] = url;
+      data['qrcode_url'] = url;
       
       ejs.renderFile('./views/print.ejs', data, async (err, html) => {
         if (err) {
@@ -53,13 +55,15 @@ app.post('/dotmatrix/print', async (req, res) => {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.setContent(html);
-        await page.pdf({ path: pdfPath, format: 'A4' });
+        await page.pdf({ path: pdfPath, format: 'A4', landscape: true });
         await browser.close();
 
         console.log('PDF file saved successfully.');
+        await print('./print.pdf', { orientation: 'landscape', paperSize: 'sindal' });
+        console.log('PDF print Job sent to the default printer successfully.');
         res.status(200).send('PDF created successfully.');
       });
-    // });
+    });
 
   } catch (error) {
     console.error('Printing error:', error);

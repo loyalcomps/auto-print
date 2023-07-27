@@ -147,7 +147,7 @@
                         justify-content: center;
                         text-align: right;
                     }
-                    .total_case{
+                    .total_cases{
                         height: 8mm;
                         width: 54mm;
                         /* border: 1px solid #000; */
@@ -239,12 +239,14 @@
             /* border: 1px solid #000; */
         }
         .item_name{
-            text-align: center;
+            margin-left: 3mm;
+            text-align: left;
             width: 81mm;
             /* border: 1px solid #000; */
         }
         .item_name_arabic{
-            text-align: center;
+            margin-right: 3mm;
+            text-align: right;
             width: 81mm;
             /* border: 1px solid #000; */
         }
@@ -280,124 +282,112 @@
 
 </style>
 <body>
+    <% var itemsPerPage=17; %>
+    <% var numPages=Math.ceil(line_items.length / itemsPerPage); %>
+    <% for(var i=0; i < numPages; i++) { %>
     <div class="header">
         <div class="container1">
             <div class="customer_info">
-                <p>Azure Interior</p>
-                <p>('Fremont,', ', California,', ',United States,')</p>
+                <p><%= partner_name %></p>
+                <p><%= address %></p>
             </div>
             <!-- Gap between customer address and invoice number -->
             <div style="width: 28mm;"></div>
             <div class="invoice_info">
                 <div class="invoice_number">
-                    <p>INV/67/2908</p>
+                    <p><%= invoice_no %></p>
                 </div>
                 <div class="invoice_date">
-                    <p>27-09-2023</p>
+                    <p><%= date %></p>
                 </div>
             </div>
             <div style="width: 29mm;"></div>
             <div class="customer_info_arabic">
-                <p>ازور الداخلية</p>
-                <p>فريمونت كاليفورنيا الولايات المتحدة ،</p>
+                <p><%= partner_name_arabic %></p>
+                <p><%= address_arabic %></p>
             </div>
         </div>
         <div class="container2">
             <div class="payment_terms">
-                <p>End of Following Month</p>
+                <p><%= payment_terms %></p>
             </div>
             <div class="customer_number">
-                <p>JD2989786</p>
+                <p><%= customer_no %></p>
             </div>
             <div class="place_of_delivery">
-                <p>Amman, Jordan</p>
+                <p><%= place_of_delivery %></p>
             </div>
             <div class="sales_man">
-                <p>Mitchel Admin</p>
+                <p><%= sales_man %></p>
             </div>
         </div>
     </div>
     <div class="items">
         <div class="items_header"></div>
         <div class="item_details">
-            <div class="item_line">
-                <div class="serial_number">
-                    <p>1.</p>
+            <% var start=i * itemsPerPage; %>
+            <% var end=Math.min(start + itemsPerPage, line_items.length); %>
+            <% for(var j=start; j < end; j++) { %>
+                <% var item=line_items[j]; %>
+                <div class="item_line">
+                    <div class="serial_number">
+                        <p><%= item.sl_no %>.</p>
+                    </div>
+                    <div class="item_name">
+                        <p><%= item.product_name %></p>
+                    </div>
+                    <div class="item_name_arabic">
+                        <p><%= item.product_name_arabic %></p>
+                    </div>
+                    <div class="quantity">
+                        <p><%= item.quantity %></p>
+                    </div>
+                    <div class="unit_price">
+                        <p><%= item.unit_price %></p>
+                    </div>
+                    <div class="unit">
+                        <p><%= item.uom %></p>
+                    </div>
+                    <div class="vat_amount">
+                        <p><%= item.tax_amount %></p>
+                    </div>
+                    <div class="total_value">
+                        <p><%= item.total_amount %></p>
+                    </div>
                 </div>
-                <div class="item_name">
-                    <p>Biscuit</p>
-                </div>
-                <div class="item_name_arabic">
-                    <p>بسكويت</p>
-                </div>
-                <div class="quantity">
-                    <p>10.0</p>
-                </div>
-                <div class="unit_price">
-                    <p>30.00</p>
-                </div>
-                <div class="unit">
-                    <p>Pack</p>
-                </div>
-                <div class="vat_amount">
-                    <p>2.00</p>
-                </div>
-                <div class="total_value">
-                    <p>320.00</p>
-                </div>
-            </div>
-            <div class="item_line">
-                <div class="serial_number">
-                    <p>1.</p>
-                </div>
-                <div class="item_name">
-                    <p>Biscuit</p>
-                </div>
-                <div class="item_name_arabic">
-                    <p>بسكويت</p>
-                </div>
-                <div class="quantity">
-                    <p>10.0</p>
-                </div>
-                <div class="unit_price">
-                    <p>30.00</p>
-                </div>
-                <div class="unit">
-                    <p>Pack</p>
-                </div>
-                <div class="vat_amount">
-                    <p>2.00</p>
-                </div>
-                <div class="total_value">
-                    <p>320.00</p>
-                </div>
-            </div>
+            <% } %>
         </div>
-        
+
     </div>
+    <!-- Page brak after max number -->
+    <% if(i < numPages - 1) { %>
+        <div style="page-break-after: always;"></div>
+    <% } %>
+    <!-- If this is the last page, print the footer -->
+    <% if(i===numPages - 1) { %>
     <footer>
         <div class="container3">
             <div class="qrcode">
-                <img src="qr.jpeg" alt="QR Code">
+                <img src=<%= qrcode_url  %> alt="QR Code">
             </div>
             <div class="invoice_delivery_details">
                 <div class="amount_inwords">
                     <div class="amount_in_words_english">
-                        <p>Twenty Thousand, Five Hundred And Fifty-Nine Riyal and Forty-Eight Halala</p>
+                        <p><%= amount_in_words %></p>
                     </div>
                     <div class="amount_in_words_arabic">
-                        <p>فقط عشرون ألفاً  و خمسمائة و تسعة و خمسون ريال و ثمانية و أربعون هللة</p>
+                        <p><%= amount_in_words_arabic %></p>
                     </div>
                 </div>
                 <div class="delivery_details">
                     <div class="delivery_date">
-                        <p>27-09-2023</p>
+                        <p><%= delivery_date %></p>
                     </div>
-                    <div class="total_case">
-                        <p>48</p>
+                    <div class="total_cases">
+                        <p><%= total_case %></p>
                     </div>
                     <div class="total_weight">
-                        <p>480 KG</p>
+                        <p><%= total_weight %></p>
                     </div>
                 </div>
                 
@@ -405,22 +395,25 @@
 
             <div class="invoice_totals">
                 <div class="gross_value">
-                    <p>1650.00</p>
+                    <p><%= amount_untaxed %></p>
                 </div>
                 <div class="discount">
-                    <p>0.00</p>
+                    <p><%= amount_discount %></p>
                 </div>
                 <div class="taxable_value">
-                    <p>1650.00</p>
+                    <p><%= amount_tax %></p>
                 </div>
                 <div class="vat_perc">
-                    <p>5.00</p>
+                    <p>0.00</p>
                 </div>
                 <div class="net_value">
-                    <p>1732.50</p>
+                    <p><%= amount_total %></p>
                 </div>
             </div>
         </div>
     </footer>
+    <% } %>
+
+    <% } %>
 </body>
 </html>
