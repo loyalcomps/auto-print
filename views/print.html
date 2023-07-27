@@ -6,62 +6,20 @@
     <title>Receipt</title>
 </head>
 <style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        /*width and height for a rotated A4*/
-        width: 320mm;
-        height: 215mm;
-        margin: 0;
-    }
-    .header{
-        width: 320mm;
-        height: 60mm;
-        /* background-color: #dddcdf; */
-    }
-        .container1{
-            width: 302mm;
-            display: flex;
-            justify-content: stretch;
-            position: relative;
-            top: 29mm;
-            left: 18mm;
-        }
-            .customer_info{
-                text-align: center;
-                width: 90mm;
-                height: 20mm;
-                /* border: 1px solid #000; */
-            }
-            .invoice_info{
-                width: 45mm;
-                height: 9mm;
-                /* border: 1px solid #000; */
-            }
-                .invoice_number{
-                    text-align: center;
-                    /* margin: 1px 1px 1px 1px; */
-                    width: 45mm;
-                    height: 9mm;
-                    /* border: 1px solid #000; */
-                }
-                .invoice_date{
-                    text-align: center;
-                    /* margin: 1px 1px 1px 1px; */
-                    width: 45mm;
-                    height: 9mm;
-                    /* border: 1px solid #000; */
-                }
-            .customer_info_arabic{
-                text-align: center;
-                width: 90mm;
-                height: 20mm;
-                /* border: 1px solid #000; */
-            }
 
-
-
-
-    .container2{
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /*width and height for a rotated A4*/
+    width: 320mm;
+    height: 215mm;
+    margin: 0;
+}
+.header{
+    width: 320mm;
+    height: 60mm;
+    /* background-color: #dddcdf; */
+}
+    .container1{
         width: 302mm;
         display: flex;
         justify-content: stretch;
@@ -69,216 +27,261 @@
         top: 29mm;
         left: 18mm;
     }
-        .payment_terms{
-            text-align: right;
-            width: 84mm;
-            height: 10mm;
+        .customer_info{
+            text-align: center;
+            width: 90mm;
+            height: 20mm;
             /* border: 1px solid #000; */
         }
-        .customer_number{
-            text-align: right;
-            width: 78mm;
-            height: 10mm;
+        .invoice_info{
+            width: 45mm;
+            height: 9mm;
             /* border: 1px solid #000; */
         }
-        .place_of_delivery{
-            text-align: right;
-            width: 67mm;
-            height: 10mm;
-            /* border: 1px solid #000; */
-        }
-        .sales_man{
-            text-align: right;
-            width: 55mm;
-            height: 10mm;
-            /* border: 1px solid #000; */
-        }
-
-
-
-
-    footer{
-        width: 284mm;
-        height: 35mm;
-        position: relative;
-        left: 18mm;
-        /* border: 1px solid #000; */
-    }
-        .container3{
-            display: flex;
-            justify-content: inherit;
-
-        }
-            .qrcode{
-                height: 35mm;
-                width: 35mm;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            .invoice_number{
+                text-align: center;
+                /* margin: 1px 1px 1px 1px; */
+                width: 45mm;
+                height: 9mm;
                 /* border: 1px solid #000; */
             }
-            .invoice_delivery_details{
-                height: 16mm;
+            .invoice_date{
+                text-align: center;
+                /* margin: 1px 1px 1px 1px; */
+                width: 45mm;
+                height: 9mm;
+                /* border: 1px solid #000; */
+            }
+        .customer_info_arabic{
+            text-align: center;
+            width: 90mm;
+            height: 20mm;
+            /* border: 1px solid #000; */
+        }
+
+
+
+
+.container2{
+    width: 302mm;
+    display: flex;
+    justify-content: stretch;
+    position: relative;
+    top: 29mm;
+    left: 18mm;
+}
+    .payment_terms{
+        text-align: right;
+        width: 84mm;
+        height: 10mm;
+        /* border: 1px solid #000; */
+    }
+    .customer_number{
+        text-align: right;
+        width: 78mm;
+        height: 10mm;
+        /* border: 1px solid #000; */
+    }
+    .place_of_delivery{
+        text-align: right;
+        width: 67mm;
+        height: 10mm;
+        /* border: 1px solid #000; */
+    }
+    .sales_man{
+        text-align: right;
+        width: 55mm;
+        height: 10mm;
+        /* border: 1px solid #000; */
+    }
+
+
+
+
+footer{
+    width: 284mm;
+    height: 35mm;
+    position: relative;
+    left: 18mm;
+    /* border: 1px solid #000; */
+}
+    .container3{
+        display: flex;
+        justify-content: inherit;
+
+    }
+        .qrcode{
+            height: 35mm;
+            width: 35mm;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid #000; */
+        }
+        .invoice_delivery_details{
+            height: 16mm;
+            width: 163mm;
+            /* border: 1px solid #000; */
+            display: flex;
+            flex-direction: column;
+        }
+            .amount_inwords{
+                font-size: 10px;
+                /* padding: 1px 1px 1px 1px; */
+                height: 8mm;
                 width: 163mm;
                 /* border: 1px solid #000; */
                 display: flex;
-                flex-direction: column;
+                justify-content: center;
             }
-                .amount_inwords{
-                    font-size: 10px;
-                    /* padding: 1px 1px 1px 1px; */
-                    height: 8mm;
-                    width: 163mm;
-                    /* border: 1px solid #000; */
-                    display: flex;
-                    justify-content: center;
-                }
-                .delivery_details{
-                    height: 8mm;
-                    width: 163mm;
-                    /* border: 1px solid #000; */
-                    display: flex;
-
-                }
-                    .delivery_date{
-                        height: 8mm;
-                        width: 54mm;
-                        /* border: 1px solid #000; */
-                        justify-content: center;
-                        text-align: right;
-                    }
-                    .total_cases{
-                        height: 8mm;
-                        width: 54mm;
-                        /* border: 1px solid #000; */
-                        justify-content: center;
-                        text-align: right;
-          
-                    }
-                    .total_weight{
-                        height: 8mm;
-                        width: 54mm;
-                        /* border: 1px solid #000; */
-                        justify-content: center;
-                        text-align: right;
-
-                    }
-            .invoice_totals{
-                height: 35mm;
-                width: 84mm;
-                margin-right: 3mm;
-                text-align: right;
-                display: flex;
-                flex-direction: column;
+            .delivery_details{
+                height: 8mm;
+                width: 163mm;
                 /* border: 1px solid #000; */
-                
+                display: flex;
+
             }
-                .gross_value{
-                    height: 7mm;
-                    width: 84mm;
+                .delivery_date{
+                    height: 8mm;
+                    width: 54mm;
                     /* border: 1px solid #000; */
                     justify-content: center;
                     text-align: right;
                 }
-                .discount{
-                    height: 6mm;
-                    width: 84mm;
+                .total_cases{
+                    height: 8mm;
+                    width: 54mm;
                     /* border: 1px solid #000; */
                     justify-content: center;
                     text-align: right;
+        
                 }
-                .taxable_value{
-                    height: 6mm;
-                    width: 84mm;
+                .total_weight{
+                    height: 8mm;
+                    width: 54mm;
                     /* border: 1px solid #000; */
                     justify-content: center;
                     text-align: right;
-                }
-                .vat_perc{
-                    height: 6mm;
-                    width: 84mm;
-                    /* border: 1px solid #000; */
-                    justify-content: center;
-                    text-align: right;
-                }
-                .net_value{
-                    height: 9mm;
-                    width: 84mm;
-                    /* border: 1px solid #000; */
-                    justify-content: center;
-                    text-align: right;
-                }
 
-
-
-    .items{
-        width: 284mm;
-        height: 108mm;
-        margin-left: 18mm;
-        /* border: 1px solid #000; */
-    }
-    .items_header{
-        width: 284mm;
-        height: 13mm;
-        /* border: 1px solid #000; */
-    }
-    .item_details{
-        width: 284mm;
-        height: 95mm;
-        display: flex;
-        flex-direction: column;
-        /* border: 1px solid #000; */
-    }
-    .item_line{
-        display: flex;
-        height: 5.5mm;
-    }
-        .serial_number{
-            text-align: center;
-            width: 18mm;
-            /* border: 1px solid #000; */
-        }
-        .item_name{
-            margin-left: 3mm;
-            text-align: left;
-            width: 81mm;
-            /* border: 1px solid #000; */
-        }
-        .item_name_arabic{
+                }
+        .invoice_totals{
+            height: 35mm;
+            width: 84mm;
             margin-right: 3mm;
             text-align: right;
-            width: 81mm;
+            display: flex;
+            flex-direction: column;
             /* border: 1px solid #000; */
+            
         }
-        .quantity{
-            text-align: center;
-            width: 19mm;
-            /* border: 1px solid #000; */
-        }
-        .unit_price{
-            text-align: center;
-            width: 22mm;
-            /* border: 1px solid #000; */
-        }
-        .unit{
-            text-align: center;
-            width: 19mm;
-            /* border: 1px solid #000; */
-        }
-        .vat_amount{
-            text-align: center;
-            width: 15mm;
-            /* border: 1px solid #000; */
-        }
-        .total_value{
-            text-align: center;
-            width: 28mm;
-            /* border: 1px solid #000; */
-        }
-    img{
-        width: 33mm;
-        height: 33mm;
+            .gross_value{
+                height: 7mm;
+                width: 84mm;
+                /* border: 1px solid #000; */
+                justify-content: center;
+                text-align: right;
+            }
+            .discount{
+                height: 6mm;
+                width: 84mm;
+                /* border: 1px solid #000; */
+                justify-content: center;
+                text-align: right;
+            }
+            .taxable_value{
+                height: 6mm;
+                width: 84mm;
+                /* border: 1px solid #000; */
+                justify-content: center;
+                text-align: right;
+            }
+            .vat_perc{
+                height: 6mm;
+                width: 84mm;
+                /* border: 1px solid #000; */
+                justify-content: center;
+                text-align: right;
+            }
+            .net_value{
+                height: 9mm;
+                width: 84mm;
+                /* border: 1px solid #000; */
+                justify-content: center;
+                text-align: right;
+            }
+
+
+
+.items{
+    width: 284mm;
+    height: 108mm;
+    margin-left: 18mm;
+    /* border: 1px solid #000; */
+}
+.items_header{
+    width: 284mm;
+    height: 13mm;
+    /* border: 1px solid #000; */
+}
+.item_details{
+    width: 284mm;
+    height: 95mm;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #000; */
+}
+.item_line{
+    display: flex;
+    height: 5.5mm;
+    font-size: 12px;
+}
+    .serial_number{
+        text-align: right;
+        width: 18mm;
+        /* border: 1px solid #000; */
     }
+    .item_name{
+        margin-left: 3mm;
+        text-align: left;
+        width: 81mm;
+        /* border: 1px solid #000; */
+    }
+    .item_name_arabic{
+        margin-right: 3mm;
+        text-align: right;
+        width: 81mm;
+        /* border: 1px solid #000; */
+    }
+    .quantity{
+        text-align: right;
+        width: 19mm;
+        /* border: 1px solid #000; */
+    }
+    .unit_price{
+        text-align: right;
+        width: 22mm;
+        /* border: 1px solid #000; */
+    }
+    .unit{
+        text-align: center;
+        width: 19mm;
+        /* border: 1px solid #000; */
+    }
+    .vat_amount{
+        text-align: right;
+        width: 15mm;
+        /* border: 1px solid #000; */
+    }
+    .total_value{
+        text-align: right;
+        width: 28mm;
+        /* border: 1px solid #000; */
+    }
+img{
+    width: 33mm;
+    height: 33mm;
+}
+
 
 </style>
 <body>
@@ -288,23 +291,23 @@
     <div class="header">
         <div class="container1">
             <div class="customer_info">
-                <p>Azure Interior</p>
-                <p>(&#39;Fremont,&#39;, &#39;, California,&#39;, &#39;,United States,&#39;)</p>
+                <p>Mohsen Omer S. Al- Amoudi Est</p>
+                <p>(&#39; &#39;, &#39; &#39;, &#39;,Saudi Arabia,&#39;)</p>
             </div>
             <!-- Gap between customer address and invoice number -->
             <div style="width: 28mm;"></div>
             <div class="invoice_info">
                 <div class="invoice_number">
-                    <p>/</p>
+                    <p>INV/2023/00001</p>
                 </div>
                 <div class="invoice_date">
-                    <p> </p>
+                    <p>2023-07-27</p>
                 </div>
             </div>
             <div style="width: 29mm;"></div>
             <div class="customer_info_arabic">
                 <p> </p>
-                <p> , </p>
+                <p>(&#39; &#39;, &#39; &#39;)</p>
             </div>
         </div>
         <div class="container2">
@@ -315,10 +318,10 @@
                 <p> </p>
             </div>
             <div class="place_of_delivery">
-                <p>Dammam</p>
+                <p>Jeddha</p>
             </div>
             <div class="sales_man">
-                <p>Mitchell Admin</p>
+                <p>Administrator</p>
             </div>
         </div>
     </div>
@@ -334,25 +337,25 @@
                         <p>1.</p>
                     </div>
                     <div class="item_name">
-                        <p>Storage Box</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 210</p>
                     </div>
                     <div class="item_name_arabic">
-                        <p>صندوق تخزين</p>
+                        <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>450.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>15.8</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>2.37</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>18.17</p>
+                        <p>49680.00</p>
                     </div>
                 </div>
             
@@ -362,25 +365,25 @@
                         <p>2.</p>
                     </div>
                     <div class="item_name">
-                        <p>Large Desk</p>
+                        <p>MACRONA PERFETTO (24 X 250 GM) 260</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>35.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>1799.0</p>
+                        <p>93.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>269.85</p>
+                        <p>13.95</p>
                     </div>
                     <div class="total_value">
-                        <p>2068.85</p>
+                        <p>3743.25</p>
                     </div>
                 </div>
             
@@ -390,25 +393,25 @@
                         <p>3.</p>
                     </div>
                     <div class="item_name">
-                        <p>Customizable Desk</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 261</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>750.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>112.5</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>862.5</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -418,25 +421,25 @@
                         <p>4.</p>
                     </div>
                     <div class="item_name">
-                        <p>Corner Desk Right Sit</p>
+                        <p>MACRONA PERFETTO (24 X 400 GM) 224</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>147.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>22.05</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>169.05</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -446,25 +449,25 @@
                         <p>5.</p>
                     </div>
                     <div class="item_name">
-                        <p>Customizable Desk</p>
+                        <p>MACRONA PERFETTO (24 X 450 GM) 220</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>750.0</p>
+                        <p>93.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>112.5</p>
+                        <p>13.95</p>
                     </div>
                     <div class="total_value">
-                        <p>862.5</p>
+                        <p>534.75</p>
                     </div>
                 </div>
             
@@ -474,25 +477,25 @@
                         <p>6.</p>
                     </div>
                     <div class="item_name">
-                        <p>Pedal Bin</p>
+                        <p>MACRONA PERFETTO (24 X 450 GM) 221</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>47.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>7.05</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>54.05</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -502,25 +505,25 @@
                         <p>7.</p>
                     </div>
                     <div class="item_name">
-                        <p>Cabinet with Doors</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 213</p>
                     </div>
                     <div class="item_name_arabic">
-                        <p>False</p>
+                        <p>211- جلابية شراب (24 × 500 جم)</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>140.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>21.0</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>161.0</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -530,25 +533,25 @@
                         <p>8.</p>
                     </div>
                     <div class="item_name">
-                        <p>Office Design Software</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 216</p>
                     </div>
                     <div class="item_name_arabic">
-                        <p>False</p>
+                        <p>211- جلابية شراب (24 × 500 جم)</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>280.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>42.0</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>322.0</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -558,25 +561,25 @@
                         <p>9.</p>
                     </div>
                     <div class="item_name">
-                        <p>Flipover</p>
+                        <p>MACRONA PERFETTO(24 X 500 GM) 217</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>1950.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>292.5</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>2242.5</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -586,25 +589,25 @@
                         <p>10.</p>
                     </div>
                     <div class="item_name">
-                        <p>Three-Seat Sofa</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 218</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>1500.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>225.0</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>1725.0</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -614,25 +617,25 @@
                         <p>11.</p>
                     </div>
                     <div class="item_name">
-                        <p>Drawer</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 219</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>110.5</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>16.580000000000002</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>127.08</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -642,25 +645,25 @@
                         <p>12.</p>
                     </div>
                     <div class="item_name">
-                        <p>Four Person Desk</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 231</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>2350.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>352.5</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>2702.5</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -670,25 +673,25 @@
                         <p>13.</p>
                     </div>
                     <div class="item_name">
-                        <p>Desk Stand with Screen</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 232</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>2100.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>315.0</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>2415.0</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -698,25 +701,25 @@
                         <p>14.</p>
                     </div>
                     <div class="item_name">
-                        <p>Desk Combination</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 233</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>450.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>67.5</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>517.5</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -726,25 +729,25 @@
                         <p>15.</p>
                     </div>
                     <div class="item_name">
-                        <p>Office Chair</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 236</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>70.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>10.5</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>80.5</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -754,25 +757,25 @@
                         <p>16.</p>
                     </div>
                     <div class="item_name">
-                        <p>Large Meeting Table</p>
+                        <p>MACRONA PERFETTO (24 X 500 GM) 250</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>5.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>4000.0</p>
+                        <p>96.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>600.0</p>
+                        <p>14.40</p>
                     </div>
                     <div class="total_value">
-                        <p>4600.0</p>
+                        <p>552.00</p>
                     </div>
                 </div>
             
@@ -782,25 +785,25 @@
                         <p>17.</p>
                     </div>
                     <div class="item_name">
-                        <p>Acoustic Bloc Screens</p>
+                        <p>NESCAFE GOLD CAPPUCCINO UNSWT 10 (10 x 14.2G)</p>
                     </div>
                     <div class="item_name_arabic">
-                        <p>شاشات الكتلة الصوتية</p>
+                        <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>4.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>295.0</p>
+                        <p>330.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>44.25</p>
+                        <p>49.50</p>
                     </div>
                     <div class="total_value">
-                        <p>339.25</p>
+                        <p>1518.00</p>
                     </div>
                 </div>
             
@@ -818,23 +821,23 @@
     <div class="header">
         <div class="container1">
             <div class="customer_info">
-                <p>Azure Interior</p>
-                <p>(&#39;Fremont,&#39;, &#39;, California,&#39;, &#39;,United States,&#39;)</p>
+                <p>Mohsen Omer S. Al- Amoudi Est</p>
+                <p>(&#39; &#39;, &#39; &#39;, &#39;,Saudi Arabia,&#39;)</p>
             </div>
             <!-- Gap between customer address and invoice number -->
             <div style="width: 28mm;"></div>
             <div class="invoice_info">
                 <div class="invoice_number">
-                    <p>/</p>
+                    <p>INV/2023/00001</p>
                 </div>
                 <div class="invoice_date">
-                    <p> </p>
+                    <p>2023-07-27</p>
                 </div>
             </div>
             <div style="width: 29mm;"></div>
             <div class="customer_info_arabic">
                 <p> </p>
-                <p> , </p>
+                <p>(&#39; &#39;, &#39; &#39;)</p>
             </div>
         </div>
         <div class="container2">
@@ -845,10 +848,10 @@
                 <p> </p>
             </div>
             <div class="place_of_delivery">
-                <p>Dammam</p>
+                <p>Jeddha</p>
             </div>
             <div class="sales_man">
-                <p>Mitchell Admin</p>
+                <p>Administrator</p>
             </div>
         </div>
     </div>
@@ -864,25 +867,25 @@
                         <p>18.</p>
                     </div>
                     <div class="item_name">
-                        <p>Corner Desk Left Sit</p>
+                        <p>NESCAFE RED MUG ( 12 x 47.5 GM )</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>4.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>85.0</p>
+                        <p>130.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>12.75</p>
+                        <p>19.50</p>
                     </div>
                     <div class="total_value">
-                        <p>97.75</p>
+                        <p>598.00</p>
                     </div>
                 </div>
             
@@ -892,25 +895,25 @@
                         <p>19.</p>
                     </div>
                     <div class="item_name">
-                        <p>Individual Workplace</p>
+                        <p>NESCAFE GOLD ( 10 X 100 GM )</p>
                     </div>
                     <div class="item_name_arabic">
                         <p>False</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>4.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>885.0</p>
+                        <p>165.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>132.75</p>
+                        <p>24.75</p>
                     </div>
                     <div class="total_value">
-                        <p>1017.75</p>
+                        <p>759.00</p>
                     </div>
                 </div>
             
@@ -920,53 +923,25 @@
                         <p>20.</p>
                     </div>
                     <div class="item_name">
-                        <p>Office Chair Black</p>
+                        <p>NESCAFE 3 IN 1 (10 X 30 X 20 GM) KEES</p>
                     </div>
                     <div class="item_name_arabic">
-                        <p>False</p>
+                        <p>نسكافيه 3 في 1 (10 × 30 × 20 جم) كيس</p>
                     </div>
                     <div class="quantity">
-                        <p>1.0</p>
+                        <p>4.00</p>
                     </div>
                     <div class="unit_price">
-                        <p>120.5</p>
+                        <p>340.00</p>
                     </div>
                     <div class="unit">
-                        <p>1.0</p>
+                        <p>CASE</p>
                     </div>
                     <div class="vat_amount">
-                        <p>18.080000000000002</p>
+                        <p>51.00</p>
                     </div>
                     <div class="total_value">
-                        <p>138.58</p>
-                    </div>
-                </div>
-            
-                
-                <div class="item_line">
-                    <div class="serial_number">
-                        <p>21.</p>
-                    </div>
-                    <div class="item_name">
-                        <p>Conference Chair</p>
-                    </div>
-                    <div class="item_name_arabic">
-                        <p>False</p>
-                    </div>
-                    <div class="quantity">
-                        <p>1.0</p>
-                    </div>
-                    <div class="unit_price">
-                        <p>33.0</p>
-                    </div>
-                    <div class="unit">
-                        <p>1.0</p>
-                    </div>
-                    <div class="vat_amount">
-                        <p>4.95</p>
-                    </div>
-                    <div class="total_value">
-                        <p>37.95</p>
+                        <p>1564.00</p>
                     </div>
                 </div>
             
@@ -980,26 +955,26 @@
     <footer>
         <div class="container3">
             <div class="qrcode">
-                <img src=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACECAYAAABRRIOnAAAAAklEQVR4AewaftIAAAOfSURBVO3BQa5bSQIDwWRB979yjhcNNFcFPEj6dnsYEX9h5h+HmXKYKYeZcpgph5lymCmHmXKYKYeZcpgph5lymCmHmXKYKYeZ8uJNSfhJKu9IQlO5ScITKi0JP0nlHYeZcpgph5ny4sNUPikJTyShqdwkoak0lZaEpvKEyicl4ZMOM+UwUw4z5cWXJeEJlSeScJOEptKScJOEb0rCEyrfdJgph5lymCkv/nIqNyrzr8NMOcyUw0x58ZdRaUm4UXlC5W92mCmHmXKYKS++TOV3UnkiCU2lJeFG5QmVP8lhphxmymGmvPiwJPxJktBUWhKaSktCU2lJeCIJf7LDTDnMlMNMefEmlf+SJDSVG5V3qPyXHGbKYaYcZsqLNyWhqbQkfJJKU2lJuFFpSbhRaUloKjdJ+CSVbzrMlMNMOcyUF29SaUl4QuWJJDSVT1K5UWlJaCpNpSWhqbQkNJWWhKbySYeZcpgph5kSf+ENSWgqLQlN5YkkPKFyk4QblZskNJWWhBuVloRPUnnHYaYcZsphpsRf+KAkNJWWhCdUWhJuVJ5IQlN5IgmfpPI7HWbKYaYcZsqLP1wSmspNEm5UmkpLwo1KU2lJuFFpSWhJuFFpSWgq7zjMlMNMOcyUF29KQlP5JJWbJDSVJ5LQVJ5Iwo1KS0JTuUlCS0JT+aTDTDnMlMNMefHDVG6S0JJwo3KThKbSVFoSmkpLwo1KS8I3JaGpvOMwUw4z5TBTXnxZEt6hcpOEG5WbJDSVloQblRuVloQnVFoSvukwUw4z5TBTXnyZSkvCjUpLwjuS0FRuknCj0pLwjiQ0lZaEn3SYKYeZcpgp8Rf+w5LQVFoSmspNEppKS8KNyhNJuFG5SUJTecdhphxmymGmvHhTEn6SSlN5IglPJKGptCTcJKGpPJGEn3SYKYeZcpgpLz5M5ZOScJOEptJUWhKayk0S3qHyDpWbJHzSYaYcZsphprz4siQ8ofKOJDyRhCeScJOET0pCU2kqn3SYKYeZcpgpL/5yKjdJaCo3SWgqLQk3Ki0JNyotCTcq7zjMlMNMOcyUF//nVG6S0FRuVG6S0FRaEm5UWhI+6TBTDjPlMFNefJnKN6m0JHySyk0SmkpLwk0SmsrvdJgph5lymCkvPiwJPykJN0loKi0JT6g0lZaEJ1RaEn6nw0w5zJTDTIm/MPOPw0w5zJTDTDnMlMNMOcyUw0w5zJTDTDnMlMNMOcyUw0w5zJTDTPkfY+GeGY+XLDQAAAAASUVORK5CYII= alt="QR Code">
+                <img src=data:image/png;base64,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 alt="QR Code">
             </div>
             <div class="invoice_delivery_details">
                 <div class="amount_inwords">
                     <div class="amount_in_words_english">
-                        <p>Twenty Thousand, Five Hundred And Fifty-Nine Riyal and Forty-Eight Halala</p>
+                        <p>Sixty-Five Thousand, Five Hundred And Seventy-Three Riyal</p>
                     </div>
                     <div class="amount_in_words_arabic">
-                        <p>فقط عشرون ألفاً  و خمسمائة و تسعة و خمسون ريال و ثمانية و أربعون هللة</p>
+                        <p>فقط خمسة و ستون ألفاً  و خمسمائةثلاثة و سبعون ريال</p>
                     </div>
                 </div>
                 <div class="delivery_details">
                     <div class="delivery_date">
-                        <p>2023-07-27</p>
+                        <p>2023-05-28</p>
                     </div>
                     <div class="total_cases">
-                        <p>0</p>
+                        <p>10</p>
                     </div>
                     <div class="total_weight">
-                        <p>0.0</p>
+                        <p>100.0</p>
                     </div>
                 </div>
                 
@@ -1007,19 +982,19 @@
 
             <div class="invoice_totals">
                 <div class="gross_value">
-                    <p>17877.8</p>
+                    <p>57020.00</p>
                 </div>
                 <div class="discount">
-                    <p>17877.8</p>
-                </div>
-                <div class="taxable_value">
-                    <p>2681.68</p>
-                </div>
-                <div class="vat_perc">
                     <p>0.00</p>
                 </div>
+                <div class="taxable_value">
+                    <p>57020.00</p>
+                </div>
+                <div class="vat_perc">
+                    <p>8553.00</p>
+                </div>
                 <div class="net_value">
-                    <p>20559.48</p>
+                    <p>65573.00</p>
                 </div>
             </div>
         </div>
