@@ -29,10 +29,10 @@ app.post('/dotmatrix/print', async (req, res) => {
 
     const data = req.body['printer_data'];
     const pdfPath = './print.pdf';
-    console.log(data);
+    // console.log(data);
     let print_data = JSON.parse(data);
     const qc = print_data.qr_code_str;
-    console.log(qc);
+    // console.log(qc);
     QRCode.toDataURL(qc, (err, url) => {
         print_data.qrcode_url = url;
       if (err) {
@@ -51,7 +51,7 @@ app.post('/dotmatrix/print', async (req, res) => {
 
         FileSystem.writeFileSync('./views/print.html', html);
 
-        const browser = await puppeteer.launch(headless="new");
+        const browser = await puppeteer.launch({headless: 'new',});
         const page = await browser.newPage();
         await page.setContent(html);
         await page.pdf({ path: pdfPath, format: 'A4', landscape: true, printBackground: true});
