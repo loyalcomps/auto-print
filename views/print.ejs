@@ -1,301 +1,426 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt</title>
 </head>
 <style>
-    body {
-    width: 297mm;
-    height: 210mm;
-    margin: 50px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    height: 25%;
-    position: relative;
-}
-.customer_info {
-    position: relative;
-    top: 0%;
-    left: 4%;
-}
-
-.customer_info_arabic {
-    width: 33%;
-    position: relative;
-    top: 1%;
-    left: 65%;
-    direction: rtl;
-    text-align: right;
-    line-height: 0.5;
-}
-
-.invoicenumber {
-    align-items: center;
-    position: relative;
-    top: 0%;
-    left: 50%;
-}
-
-
-
-.payment_terms {
-    position: relative;
-    top: 20.5%;
-    left: 16%;
-}
-
-.customer_number {
-    position: relative;
-    top: 20.5%;
-    left: 48%;
-}
-
-.place_of_delivery {
-    position: relative;
-    top: 20.5%;
-    left: 75%;
-}
-
-.sales_man {
-    position: relative;
-    top: 20.5%;
-    left: 92%;
-}
-
-ol {
-  list-style-type: none;
-}
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        /*width and height for a rotated A4*/
+        width: 320mm;
+        height: 215mm;
+        margin: 0;
+    }
+    .header{
+        width: 320mm;
+        height: 60mm;
+        /* background-color: #dddcdf; */
+    }
+        .container1{
+            width: 302mm;
+            display: flex;
+            justify-content: stretch;
+            position: relative;
+            top: 29mm;
+            left: 18mm;
+        }
+            .customer_info{
+                text-align: center;
+                width: 90mm;
+                height: 20mm;
+                /* border: 1px solid #000; */
+            }
+            .invoice_info{
+                width: 45mm;
+                height: 9mm;
+                /* border: 1px solid #000; */
+            }
+                .invoice_number{
+                    text-align: center;
+                    /* margin: 1px 1px 1px 1px; */
+                    width: 45mm;
+                    height: 9mm;
+                    /* border: 1px solid #000; */
+                }
+                .invoice_date{
+                    text-align: center;
+                    /* margin: 1px 1px 1px 1px; */
+                    width: 45mm;
+                    height: 9mm;
+                    /* border: 1px solid #000; */
+                }
+            .customer_info_arabic{
+                text-align: center;
+                width: 90mm;
+                height: 20mm;
+                /* border: 1px solid #000; */
+            }
 
 
-.line_items{
-    position: relative;
-    top: 32%;
-    left: 0%;
-    width: 100%;
-    height: 50%;
-}
 
-.line_items ol li{
-    position: relative;
-    height: 20px; 
-}
-.serial_number{
-    position: relative;
-    left: 3%;
-}
-.item_name{
-    position: relative;
-    left: 6.3%;
-    width:30%;
-}
-.item_name_arabic{
-    position: relative;
-    left: 27.5%;
-    width: 30%;
-    direction: rtl;
-    text-align: right;
-}
-.quantity{
-    position: relative;
-    left: 68%;
-}
-.unit_price{
-    position: relative;
-    left: 75.2%;
-}
-.unit{
-    position: relative;
-    left: 84%;
-}
-.vat_amount{
-    position: relative;
-    left: 89%;
-}
-.total_value{
-    position: relative;
-    left: 96%;
-}
 
-.footer{
-    position: relative;
-    top: 85%;
-    left: 2%;
-    width: 100%;
-}
-.qrcode{
-    height:100px;
-    width: 100px;
-    vertical-align: right;
-    float:left;
-    bottom:0;
-    margin-left: 1%;
-    margin-top: 1%;
-}
+    .container2{
+        width: 302mm;
+        display: flex;
+        justify-content: stretch;
+        position: relative;
+        top: 29mm;
+        left: 18mm;
+    }
+        .payment_terms{
+            text-align: right;
+            width: 84mm;
+            height: 10mm;
+            /* border: 1px solid #000; */
+        }
+        .customer_number{
+            text-align: right;
+            width: 78mm;
+            height: 10mm;
+            /* border: 1px solid #000; */
+        }
+        .place_of_delivery{
+            text-align: right;
+            width: 67mm;
+            height: 10mm;
+            /* border: 1px solid #000; */
+        }
+        .sales_man{
+            text-align: right;
+            width: 55mm;
+            height: 10mm;
+            /* border: 1px solid #000; */
+        }
 
-.total_english{
-    vertical-align: text-top;
-    margin-left: 10px;
-    position: relative;
-    left: 16%;
-    width: 25%;
-    font-size: 13px;
-}
 
-.total_arabic{
-    vertical-align: text-top;
-    margin-left: 10px;
-    direction: rtl;
-    position: relative;
-    left: 40%;
-    width: 25%;
-    font-size: 13px;
-}
 
-.footer_child{
-    position: relative;
-    top: 35%;
-    left: 10%;
-    width: 55%;
-}
-.delivery_date{
-    position: relative;
-    top: 5.3%;
-    left: 19%;
-}
-.cases{
-    position: relative;
-    top: 5.3%;
-    left: 61%;
-}
-.weight{
-    position: relative;
-    top: 5.3%;
-    left: 100%;
-}
 
-.footer_net{
-    position: relative;
-    top: 0%;
-    left: 93.3%;
-    text-align: right;
-    height: 100%;
-}
-.footer_net span {
-    display: block;
-    position: relative;
-}
+    footer{
+        width: 284mm;
+        height: 35mm;
+        position: relative;
+        left: 18mm;
+        /* border: 1px solid #000; */
+    }
+        .container3{
+            display: flex;
+            justify-content: inherit;
 
-.amount_untaxed{
-    position: relative;
-    top: 0%;
-}
-.amount_discount{
-    position: relative;
-    top: 8%;
+        }
+            .qrcode{
+                height: 35mm;
+                width: 35mm;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* border: 1px solid #000; */
+            }
+            .invoice_delivery_details{
+                height: 16mm;
+                width: 163mm;
+                /* border: 1px solid #000; */
+                display: flex;
+                flex-direction: column;
+            }
+                .amount_inwords{
+                    font-size: 10px;
+                    /* padding: 1px 1px 1px 1px; */
+                    height: 8mm;
+                    width: 163mm;
+                    /* border: 1px solid #000; */
+                    display: flex;
+                    justify-content: center;
+                }
+                .delivery_details{
+                    height: 8mm;
+                    width: 163mm;
+                    /* border: 1px solid #000; */
+                    display: flex;
 
-}
-.amount_tax{
-    position: relative;
-    top: 15%;
+                }
+                    .delivery_date{
+                        height: 8mm;
+                        width: 54mm;
+                        /* border: 1px solid #000; */
+                        justify-content: center;
+                        text-align: right;
+                    }
+                    .total_case{
+                        height: 8mm;
+                        width: 54mm;
+                        /* border: 1px solid #000; */
+                        justify-content: center;
+                        text-align: right;
+          
+                    }
+                    .total_weight{
+                        height: 8mm;
+                        width: 54mm;
+                        /* border: 1px solid #000; */
+                        justify-content: center;
+                        text-align: right;
 
-}
-.vat_percent{
-    position: relative;
-    top: 20%;
+                    }
+            .invoice_totals{
+                height: 35mm;
+                width: 84mm;
+                margin-right: 3mm;
+                text-align: right;
+                display: flex;
+                flex-direction: column;
+                /* border: 1px solid #000; */
+                
+            }
+                .gross_value{
+                    height: 7mm;
+                    width: 84mm;
+                    /* border: 1px solid #000; */
+                    justify-content: center;
+                    text-align: right;
+                }
+                .discount{
+                    height: 6mm;
+                    width: 84mm;
+                    /* border: 1px solid #000; */
+                    justify-content: center;
+                    text-align: right;
+                }
+                .taxable_value{
+                    height: 6mm;
+                    width: 84mm;
+                    /* border: 1px solid #000; */
+                    justify-content: center;
+                    text-align: right;
+                }
+                .vat_perc{
+                    height: 6mm;
+                    width: 84mm;
+                    /* border: 1px solid #000; */
+                    justify-content: center;
+                    text-align: right;
+                }
+                .net_value{
+                    height: 9mm;
+                    width: 84mm;
+                    /* border: 1px solid #000; */
+                    justify-content: center;
+                    text-align: right;
+                }
 
-}
-.amount_total{
-    position: relative;
-    top: 25%;
-}
+
+
+    .items{
+        width: 284mm;
+        height: 108mm;
+        margin-left: 18mm;
+        /* border: 1px solid #000; */
+    }
+    .items_header{
+        width: 284mm;
+        height: 13mm;
+        /* border: 1px solid #000; */
+    }
+    .item_details{
+        width: 284mm;
+        height: 95mm;
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid #000; */
+    }
+    .item_line{
+        display: flex;
+        height: 5.5mm;
+    }
+        .serial_number{
+            text-align: center;
+            width: 18mm;
+            /* border: 1px solid #000; */
+        }
+        .item_name{
+            text-align: center;
+            width: 81mm;
+            /* border: 1px solid #000; */
+        }
+        .item_name_arabic{
+            text-align: center;
+            width: 81mm;
+            /* border: 1px solid #000; */
+        }
+        .quantity{
+            text-align: center;
+            width: 19mm;
+            /* border: 1px solid #000; */
+        }
+        .unit_price{
+            text-align: center;
+            width: 22mm;
+            /* border: 1px solid #000; */
+        }
+        .unit{
+            text-align: center;
+            width: 19mm;
+            /* border: 1px solid #000; */
+        }
+        .vat_amount{
+            text-align: center;
+            width: 15mm;
+            /* border: 1px solid #000; */
+        }
+        .total_value{
+            text-align: center;
+            width: 28mm;
+            /* border: 1px solid #000; */
+        }
+    img{
+        width: 33mm;
+        height: 33mm;
+    }
+
 </style>
-
 <body>
-
-    <% var itemsPerPage = 17; %>
-    <% var numPages = Math.ceil(line_items.length / itemsPerPage); %>
-    <% for(var i = 0; i < numPages; i++) { %>
-        <!-- Print the header on each page -->
     <div class="header">
-        <div class="customer_info">
-            <p class="customer_name"><%= partner_name %></p>
-            <p class="customer_address"><%= address %></p>
+        <div class="container1">
+            <div class="customer_info">
+                <p>Azure Interior</p>
+                <p>('Fremont,', ', California,', ',United States,')</p>
+            </div>
+            <!-- Gap between customer address and invoice number -->
+            <div style="width: 28mm;"></div>
+            <div class="invoice_info">
+                <div class="invoice_number">
+                    <p>INV/67/2908</p>
+                </div>
+                <div class="invoice_date">
+                    <p>27-09-2023</p>
+                </div>
+            </div>
+            <div style="width: 29mm;"></div>
+            <div class="customer_info_arabic">
+                <p>ازور الداخلية</p>
+                <p>فريمونت كاليفورنيا الولايات المتحدة ،</p>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="payment_terms">
+                <p>End of Following Month</p>
+            </div>
+            <div class="customer_number">
+                <p>JD2989786</p>
+            </div>
+            <div class="place_of_delivery">
+                <p>Amman, Jordan</p>
+            </div>
+            <div class="sales_man">
+                <p>Mitchel Admin</p>
+            </div>
+        </div>
+    </div>
+    <div class="items">
+        <div class="items_header"></div>
+        <div class="item_details">
+            <div class="item_line">
+                <div class="serial_number">
+                    <p>1.</p>
+                </div>
+                <div class="item_name">
+                    <p>Biscuit</p>
+                </div>
+                <div class="item_name_arabic">
+                    <p>بسكويت</p>
+                </div>
+                <div class="quantity">
+                    <p>10.0</p>
+                </div>
+                <div class="unit_price">
+                    <p>30.00</p>
+                </div>
+                <div class="unit">
+                    <p>Pack</p>
+                </div>
+                <div class="vat_amount">
+                    <p>2.00</p>
+                </div>
+                <div class="total_value">
+                    <p>320.00</p>
+                </div>
+            </div>
+            <div class="item_line">
+                <div class="serial_number">
+                    <p>1.</p>
+                </div>
+                <div class="item_name">
+                    <p>Biscuit</p>
+                </div>
+                <div class="item_name_arabic">
+                    <p>بسكويت</p>
+                </div>
+                <div class="quantity">
+                    <p>10.0</p>
+                </div>
+                <div class="unit_price">
+                    <p>30.00</p>
+                </div>
+                <div class="unit">
+                    <p>Pack</p>
+                </div>
+                <div class="vat_amount">
+                    <p>2.00</p>
+                </div>
+                <div class="total_value">
+                    <p>320.00</p>
+                </div>
+            </div>
         </div>
         
-        <div class="invoicenumber">
-            <p><%= invoice_no %></p>
-            <p><%= date %></p>
-        </div>
-
-        <div class="customer_info_arabic">
-            <p class="customer_name_arabic"><%= partner_name_arabic %></p>
-            <p class="customer_address_arabic"><%= address_arabic %></p>
-        </div>
-        <div class="headaer_bottom">
-            <p class="payment_terms"><%= payment_terms %></p>
-            <p class="customer_number"><%= customer_no %></p>
-            <p class="place_of_delivery"><%= place_of_delivery %></p>
-            <p class="sales_man"><%= sales_man %></p>
-        </div>
-
     </div>
-    <div class="line_items">
-        <ol>
-            <% var start = i * itemsPerPage; %>
-            <% var end = Math.min(start + itemsPerPage, line_items.length); %>
-            <% for(var j = start; j < end; j++) { %>
-                <% var item = line_items[j]; %>
-                <li style="display: flex;">
-                    <p class="serial_number"><%= item.sl_no %>.</p>
-                    <p class="item_name"><%= item.product_name %> </p>
-                    <p class="item_name_arabic"><%= item.product_name_arabic %></p>
-                    <p class="quantity"><%= item.quantity %></p>
-                    <p class="unit_price"><%= item.unit_price %></p>
-                    <p class="unit"><%= item.uom %></p>
-                    <p class="vat_amount"><%= item.tax_amount %></p>
-                    <p class="total_value"><%= item.total_amount %></p>
-                </li>
-            <% } %>
-        </ol>
-    </div>
+    <footer>
+        <div class="container3">
+            <div class="qrcode">
+                <img src="qr.jpeg" alt="QR Code">
+            </div>
+            <div class="invoice_delivery_details">
+                <div class="amount_inwords">
+                    <div class="amount_in_words_english">
+                        <p>Twenty Thousand, Five Hundred And Fifty-Nine Riyal and Forty-Eight Halala</p>
+                    </div>
+                    <div class="amount_in_words_arabic">
+                        <p>فقط عشرون ألفاً  و خمسمائة و تسعة و خمسون ريال و ثمانية و أربعون هللة</p>
+                    </div>
+                </div>
+                <div class="delivery_details">
+                    <div class="delivery_date">
+                        <p>27-09-2023</p>
+                    </div>
+                    <div class="total_case">
+                        <p>48</p>
+                    </div>
+                    <div class="total_weight">
+                        <p>480 KG</p>
+                    </div>
+                </div>
+                
+            </div>
 
-    <% if(i < numPages - 1) { %>
-        <div style="page-break-after: always;"></div>
-      <% } %>
-      <!-- If this is the last page, print the footer -->
-  <% if(i === numPages - 1) { %>
-    <div class="footer">
-        <div>
-            <img class="qrcode" alt="Logo" src="<%= qrcode_url  %>">
-            <span class="total_english"><%= amount_in_words %></span>
-            <span class="total_arabic"><%= amount_in_words_arabic %></span>
+            <div class="invoice_totals">
+                <div class="gross_value">
+                    <p>1650.00</p>
+                </div>
+                <div class="discount">
+                    <p>0.00</p>
+                </div>
+                <div class="taxable_value">
+                    <p>1650.00</p>
+                </div>
+                <div class="vat_perc">
+                    <p>5.00</p>
+                </div>
+                <div class="net_value">
+                    <p>1732.50</p>
+                </div>
+            </div>
         </div>
-        <div class="footer_child">
-            <span class="delivery_date"><%= delivery_date %></span>
-            <span class="cases"><%= total_case %></span>
-            <span class="weight"><%= total_weight %></span>
-        </div>
-        <div class="footer_net">
-            <span class="amount_untaxed"><%= amount_untaxed %></span>
-            <span class="amount_discount"><%= amount_discount %></span>
-            <span class="amount_tax"><%= amount_tax %></span>
-            <span class="vat_percent">0</span>
-            <span class="amount_total"><%= amount_total %></span>
-        </div>
-    </div>
-  <% } %>
-
-<% } %>
-
+    </footer>
 </body>
 </html>

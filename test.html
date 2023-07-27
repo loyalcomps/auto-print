@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        width: 320mm;
+        height: 215mm;
+        margin: 0;
+    }
+    .header{
+        display: grid;
+        grid-template-columns: 90mm 28mm 45mm 29mm 90mm;
+        grid-template-rows: 20mm 20mm;
+        gap: 1mm;
+        width: 302mm;
+        height: 60mm;
+        position: relative;
+        top: 29mm;
+        left: 18mm;
+    }
+    .customer_info, .invoice_info, .customer_info_arabic{
+        grid-row: 1;
+        border: 1px solid #000;
+    }
+    .invoice_info{
+        grid-row: 1 / 3;
+        display: grid;
+        grid-template-rows: 9mm 9mm;
+        gap: 1mm;
+    }
+    .invoice_number, .invoice_date{
+        border: 1px solid #000;
+    }
+    .container2{
+        display: grid;
+        grid-template-columns: 84mm 78mm 67mm 55mm;
+        gap: 1mm;
+        width: 302mm;
+        height: 10mm;
+        position: relative;
+        top: 29mm;
+        left: 18mm;
+    }
+    .payment_terms, .customer_number, .place_of_delivery, .sales_man{
+        border: 1px solid #000;
+    }
+    .items{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1mm;
+        width: 302mm;
+        height: 108mm;
+        position: relative;
+        top: 29mm;
+        left: 18mm;
+    }
+    .items_header, .item_lines{
+        grid-column: span 7;
+        border: 1px solid #000;
+    }
+    .item_lines > div{
+        border: 1px solid #000;
+    }
+    footer{
+        display: grid;
+        grid-template-columns: 35mm 163mm 84mm;
+        gap: 1mm;
+        width: 302mm;
+        height: 35mm;
+        position: relative;
+        top: 29mm;
+        left: 18mm;
+    }
+    .qrcode, .invoice_delivery_details, .invoice_totals{
+        border: 1px solid #000;
+    }
+</style>
+<body>
+    <div class="header">
+        <div class="customer_info">Customer Info</div>
+        <div class="invoice_info">
+            <div class="invoice_number">Invoice Number</div>
+            <div class="invoice_date">Invoice Date</div>
+        </div>
+        <div class="customer_info_arabic">Customer Info (Arabic)</div>
+    </div>
+    <div class="container2">
+        <div class="payment_terms">Payment Terms</div>
+        <div class="customer_number">Customer Number</div>
+        <div class="place_of_delivery">Place of Delivery</div>
+        <div class="sales_man">Salesman</div>
+    </div>
+    <div class="items">
+        <div class="items_header">Items Header</div>
+        <div class="item_lines">
+            <div>Serial Number</div>
+            <div>Item Name</div>
+            <div>Item Name (Arabic)</div>
+            <div>Quantity</div>
+            <div>Unit Price</div>
+            <div>Unit</div>
+            <div>Total Value</div>
+        </div>
+    </div>
+    <footer>
+        <div class="qrcode">QR Code</div>
+        <div class="invoice_delivery_details">Invoice Delivery Details</div>
+        <div class="invoice_totals">Invoice Totals</div>
+    </footer>
+</body>
+</html>
