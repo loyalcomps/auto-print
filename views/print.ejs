@@ -17,7 +17,7 @@ body{
 .header{
     width: 320mm;
     height: 60mm;
-    /* background-color: #dddcdf; */
+    /* background-color: #DDDCDF; */
 }
     .container1{
         width: 302mm;
@@ -28,12 +28,14 @@ body{
         left: 18mm;
     }
         .customer_info{
+            margin-top: 5mm;
             text-align: center;
             width: 90mm;
             height: 20mm;
             /* border: 1px solid #000; */
         }
         .invoice_info{
+            margin-left: 5mm;
             width: 45mm;
             height: 9mm;
             /* border: 1px solid #000; */
@@ -58,10 +60,6 @@ body{
             height: 20mm;
             /* border: 1px solid #000; */
         }
-
-
-
-
 .container2{
     width: 302mm;
     display: flex;
@@ -71,35 +69,37 @@ body{
     left: 18mm;
 }
     .payment_terms{
+        margin-top: 3mm;
         text-align: right;
         width: 84mm;
         height: 10mm;
         /* border: 1px solid #000; */
     }
     .customer_number{
+        margin-top: 2mm;
         text-align: right;
         width: 78mm;
         height: 10mm;
         /* border: 1px solid #000; */
     }
     .place_of_delivery{
+        margin-top: 2mm;
         text-align: right;
         width: 67mm;
         height: 10mm;
         /* border: 1px solid #000; */
     }
     .sales_man{
+        margin-top: 2mm;
+        margin-left: 7mm;
         text-align: right;
         width: 55mm;
         height: 10mm;
         /* border: 1px solid #000; */
     }
-
-
-
-
 footer{
-    width: 284mm;
+    margin-top: 15mm;
+    width: 302mm;
     height: 35mm;
     position: relative;
     left: 18mm;
@@ -108,7 +108,6 @@ footer{
     .container3{
         display: flex;
         justify-content: inherit;
-
     }
         .qrcode{
             height: 35mm;
@@ -134,14 +133,36 @@ footer{
                 display: flex;
                 justify-content: center;
             }
+                .amount_in_words_english{
+                    margin-left: 9mm;
+                    font-size: 12px;
+                    /* padding: 1px 1px 1px 1px; */
+                    height: 8mm;
+                    width: 85mm;
+                    /* border: 1px solid #000; */
+                    display: flex;
+                    text-align: rightleft;
+                    justify-content: center;
+                }
+                .amount_in_words_arabic{
+                    margin-right: 2mm;
+                    font-size: 12px;
+                    /* padding: 1px 1px 1px 1px; */
+                    height: 8mm;
+                    width: 84mm;
+                    text-align: right;
+                    /* border: 1px solid #000; */
+                    display: flex;
+                    justify-content: center;
+                }
             .delivery_details{
                 height: 8mm;
                 width: 163mm;
                 /* border: 1px solid #000; */
                 display: flex;
-
             }
                 .delivery_date{
+                    margin-top: 2mm;
                     height: 8mm;
                     width: 54mm;
                     /* border: 1px solid #000; */
@@ -149,20 +170,20 @@ footer{
                     text-align: right;
                 }
                 .total_cases{
+                    margin-top: 2mm;
                     height: 8mm;
                     width: 54mm;
                     /* border: 1px solid #000; */
                     justify-content: center;
                     text-align: right;
-        
                 }
                 .total_weight{
+                    margin-top: 2mm;
                     height: 8mm;
                     width: 54mm;
                     /* border: 1px solid #000; */
                     justify-content: center;
                     text-align: right;
-
                 }
         .invoice_totals{
             height: 35mm;
@@ -172,9 +193,9 @@ footer{
             display: flex;
             flex-direction: column;
             /* border: 1px solid #000; */
-            
         }
             .gross_value{
+                margin-left: 16mm;
                 height: 7mm;
                 width: 84mm;
                 /* border: 1px solid #000; */
@@ -182,6 +203,7 @@ footer{
                 text-align: right;
             }
             .discount{
+                margin-left: 16mm;
                 height: 6mm;
                 width: 84mm;
                 /* border: 1px solid #000; */
@@ -189,6 +211,8 @@ footer{
                 text-align: right;
             }
             .taxable_value{
+                margin-top: 1mm;
+                margin-left: 16mm;
                 height: 6mm;
                 width: 84mm;
                 /* border: 1px solid #000; */
@@ -196,6 +220,8 @@ footer{
                 text-align: right;
             }
             .vat_perc{
+                margin-top: 1mm;
+                margin-left: 16mm;
                 height: 6mm;
                 width: 84mm;
                 /* border: 1px solid #000; */
@@ -203,31 +229,36 @@ footer{
                 text-align: right;
             }
             .net_value{
+                margin-top: 2mm;
+                margin-left: 16mm;
                 height: 9mm;
                 width: 84mm;
                 /* border: 1px solid #000; */
                 justify-content: center;
                 text-align: right;
             }
-
-
-
 .items{
-    width: 284mm;
+    left: 18mm;
+    width: 302mm;
     height: 108mm;
-    margin-left: 18mm;
+    position: relative;
+    left: 18mm;
     /* border: 1px solid #000; */
 }
 .items_header{
-    width: 284mm;
+    width: 302mm;
     height: 13mm;
+    left: 18mm;
     /* border: 1px solid #000; */
 }
 .item_details{
-    width: 284mm;
+    margin-top: 7mm;
+    left: 18mm;
+    width: 302mm;
     height: 95mm;
     display: flex;
     flex-direction: column;
+    left: 18mm;
     /* border: 1px solid #000; */
 }
 .item_line{
@@ -247,43 +278,46 @@ footer{
         /* border: 1px solid #000; */
     }
     .item_name_arabic{
-        margin-right: 3mm;
         text-align: right;
-        width: 81mm;
+        width: 85mm;
         /* border: 1px solid #000; */
     }
     .quantity{
+        margin-left: 3mm;
         text-align: right;
-        width: 19mm;
+        width: 24mm;
         /* border: 1px solid #000; */
     }
     .unit_price{
+        margin-left: 3mm;
         text-align: right;
         width: 22mm;
         /* border: 1px solid #000; */
     }
     .unit{
         text-align: center;
-        width: 19mm;
+        width: 23mm;
         /* border: 1px solid #000; */
     }
     .vat_amount{
+        margin-left: 3mm;
         text-align: right;
         width: 15mm;
         /* border: 1px solid #000; */
     }
     .total_value{
+        margin-left: 1mm;
         text-align: right;
-        width: 28mm;
+        width: 29mm;
         /* border: 1px solid #000; */
     }
 img{
     width: 33mm;
     height: 33mm;
 }
-
-
 </style>
+
+
 <body>
     <% var itemsPerPage=17; %>
     <% var numPages=Math.ceil(line_items.length / itemsPerPage); %>
